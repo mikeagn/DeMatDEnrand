@@ -4,7 +4,7 @@
 %********************************************************************
 
 % F_VTR		"Value To Reach" (stop when ofunc < F_VTR)
-		F_VTR = 0; 
+		F_VTR = -200; 
 
 % I_D		number of parameters of the objective function 
 		I_D = 2; 
