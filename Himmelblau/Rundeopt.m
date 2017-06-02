@@ -21,7 +21,7 @@
 		I_NP = 100;  %pretty high number - needed for demo purposes only
 
 % I_itermax       maximum number of iterations (generations)
-		I_itermax = 50; 
+		I_itermax = 200; 
        
 % F_weight        DE-stepsize F_weight ex [0, 2]
 		F_weight = 0.5; 

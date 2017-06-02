@@ -22,7 +22,7 @@ if (S_struct.I_D == 2)
   contour(S_struct.FVc_xx,S_struct.FVc_yy,S_struct.FM_meshd,20);
   title('Shubert 2D function');
   hold on;%keep the contour lines
-  plot(S_struct.FM_pop(:,1),S_struct.FM_pop(:,2),'r.');
+  plot(S_struct.FM_pop(:,1),S_struct.FM_pop(:,2),'r.','MarkerSize',25);
   hold off;
 
   [kk ll] = size(S_struct.FM_pop);
@@ -36,12 +36,12 @@ if (S_struct.I_D == 2)
   subplot(2,2,2)
   surfc(S_struct.FVc_xx,S_struct.FVc_yy,(S_struct.FM_meshd));
   axis([-10 10 -10 10 -200 200]);
-  view(-15,55);
+  view(-35,15);
   title('Shubert 2D function');
   hold on;
   plot3(S_struct.FM_pop(:,1),S_struct.FM_pop(:,2),...
 		shub,...
-       'r.');
+       'r.', 'MarkerSize',20);
   hold off;
 end %if (S_struct.I_D == 2)
   %----Convergence plot--------------------------------------------
@@ -56,25 +56,25 @@ end
   hold on;
   
   %----Difference vector distribution plot-------------------------
-if (S_struct.I_D == 2)
-  subplot(2,2,4)
-  hold off;
-  FM3D = ones(S_struct.I_NP,S_struct.I_NP,2);
-  for i=1:S_struct.I_NP
-     for j=1:S_struct.I_NP
-        FM3D(i,j,:) = S_struct.FM_pop(i,:);
-        for k=1:2
-           FM3D(i,j,k) = FM3D(i,j,k) - S_struct.FM_pop(j,k);
-        end
-        plot(FM3D(i,j,1),FM3D(i,j,2),'r.');
-        axis([-10,10,-10,10]);
-        hold on;
-     end     
-     title('Difference vector distribution');
-     grid on;
-  end
-end %if (S_struct.I_D == 2)
+% if (S_struct.I_D == 2)
+%   subplot(2,2,4)
+%   hold off;
+%   FM3D = ones(S_struct.I_NP,S_struct.I_NP,2);
+%   for i=1:S_struct.I_NP
+%      for j=1:S_struct.I_NP
+%         FM3D(i,j,:) = S_struct.FM_pop(i,:);
+%         for k=1:2
+%            FM3D(i,j,k) = FM3D(i,j,k) - S_struct.FM_pop(j,k);
+%         end
+%         plot(FM3D(i,j,1),FM3D(i,j,2),'r.');
+%         axis([-10,10,-10,10]);
+%         hold on;
+%      end     
+%      title('Difference vector distribution');
+%      grid on;
+%   end
+% end %if (S_struct.I_D == 2)
   
 drawnow;
-pause(1); %wait for one second to allow convenient viewing
+%pause(1); %wait for one second to allow convenient viewing
 return
